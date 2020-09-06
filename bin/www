@@ -24,7 +24,7 @@ app.set('httpsPort', httpsPort);
  */
 
 var options = {
-  key: fs.readFileSync(path.join(__dirname, '../certificates/key.pem')),
+  key: fs.readFileSync(path.join(__dirname, '../certificates/private.key')),
   cert: fs.readFileSync(path.join(__dirname, '../certificates/cert.pem'))
 };
 var server = https.createServer(options, app);
