@@ -1,7 +1,8 @@
 var createError = require('http-errors');
 var express = require('express');
 var helmet = require('helmet');
-var compression = require('compression')
+var compression = require('compression');
+var session = require('express-session');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -12,6 +13,20 @@ var usersRouter = require('./routes/users');
 var app = express();
 app.use(compression());
 app.use(helmet());
+
+// session setup
+app.use(session({
+  name: 'session-ID', //prevents fingerprinting our server so that the attacker will not know that backend is powered by express
+  secret: config.secretKey, // used to sign session cookie
+  resave: true,
+  saveUninitialized: true,
+  cookie: {
+    secure: true, // session is stored only over HTTPS
+    httpOnly: true, // session is sent only over HTTP(S), not client JavaScript, helping to protect against cross-site scripting attacks.
+    domain: 'localhost', // your app's domain in production
+    maxAge: config.jwtExpiryInSec * 1000 // sets expiry time
+  }
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
