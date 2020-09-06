@@ -1,4 +1,4 @@
-# Production-Ready-Express-Template
+# Production Ready Express Template
 
 > NOTE: Work in Progress...
 
