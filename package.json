@@ -1,0 +1,19 @@
+{
+  "name": "express-production-ready-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kanna727/Express-Production-Ready-Template.git"
+  },
+  "author": "Prasanth Kanna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kanna727/Express-Production-Ready-Template/issues"
+  },
+  "homepage": "https://github.com/Kanna727/Express-Production-Ready-Template#readme"
+}
